@@ -1,0 +1,15 @@
+<%= turbo_stream_from @todos %>
+
+<h1 class="font-bold text-4xl">Todos</h1>
+
+<%= render "form", todo: Todo.new %>
+<div id="todos" class="divide-y list-none">
+  <% @todos.each do |todo| %>
+    <%= render todo %>
+    <p>
+      <%= link_to "Show this todo", todo %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New todo", new_todo_path %>

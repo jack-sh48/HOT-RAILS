@@ -1,0 +1,7 @@
+<li id="<%= "#{dom_id(todo)}_item" %>" class= "py-3">
+  <%= turbo_frame_tag dom_id(todo) do %>
+    <%= link_to todo.title, edit_todo_path(todo) %>
+    Posted <%= time_tag todo.created_at, "data-local": "time-ago" %>
+    <%= button_to "Delete", todo_path(todo), method: :delete %>
+ <% end %>
+</li>
